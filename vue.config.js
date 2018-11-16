@@ -33,7 +33,7 @@ module.exports = {
     }
   },
   // 改变打包后静态资源的访问地址   原来默认的访问 css地址为  /css/a.css  变为 /static/h5/css/a.css
-  baseUrl: "/static/h5",
+  // baseUrl: "/static/h5",
   // 改变打包文件的位置   原来默认打在根目录的dist文件  变为  根目录的 static/h5 文件
-  outputDir: "./static/h5"
+  // outputDir: "./static/h5"
 };

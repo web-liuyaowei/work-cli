@@ -6,14 +6,16 @@ import store from "./store";
 
 // 注册全局过滤器
 import filters from "./utils/filters"
+console.log(filters)
 Object.keys(filters).forEach(key => {
-  Vue.components(key, filters[key]);
+  Vue.filter(key, filters[key]);
 })
 
 // 注册全局组件
 import components from "./components/index"
+console.log(components)
 Object.keys(components).forEach(key => {
-  Vue.components(key, components[key]);
+  Vue.component(key, components[key]);
 })
 
 

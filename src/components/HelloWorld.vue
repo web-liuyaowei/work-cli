@@ -27,6 +27,11 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <ul>
+      <li>{{ 1 | globalStatus }}</li>
+      <li>{{ 2 | globalStatus }}</li>
+      <li>{{ 3 | globalStatus }}</li>
+    </ul>
   </div>
 </template>
 
