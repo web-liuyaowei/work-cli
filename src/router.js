@@ -4,7 +4,7 @@ import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const VueRouter = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -16,11 +16,24 @@ export default new Router({
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () => import("./views/About.vue")
     }
+    // 404页面的设置
+    // {
+    //   path: "*",
+    //   redirect: { path: "/404" }
+    // },
+    // {
+    //   path: '/404',
+    //   component: NotFound
+    // }
   ]
 });
+
+// 全局守卫
+VueRouter.beforeEach((to, from, next) => {
+  // doing something
+  next();
+});
+
+export default VueRouter;
