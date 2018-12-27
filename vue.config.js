@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = {
   // 开发环境  web服务的配置
   devServer: {
@@ -22,6 +23,20 @@ module.exports = {
     }
   },
   configureWebpack: {
+    // 生产环境不输出console
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+              warnings: false,
+              drop_console: true, //console
+              drop_debugger: false
+            }
+          }
+        })
+      ]
+    },
     // 配置文件目录别名
     resolve: {
       alias: {
@@ -31,7 +46,7 @@ module.exports = {
         utils: "@/utils"
       }
     }
-  },
+  }
   // 改变打包后静态资源的访问地址   原来默认的访问 css地址为  /css/a.css  变为 /static/h5/css/a.css
   // baseUrl: "/static/h5",
   // 改变打包文件的位置   原来默认打在根目录的dist文件  变为  根目录的 static/h5 文件
