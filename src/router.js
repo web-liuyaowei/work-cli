@@ -17,7 +17,12 @@ const VueRouter = new Router({
       path: "/about",
       name: "about",
       component: () => import("./views/About.vue")
-    }
+    },
+    {
+      path: "/carsousel",
+      name: "about",
+      component: () => import("./components/Carousel.vue")
+    },
     // 404页面的设置
     // {
     //   path: "*",
